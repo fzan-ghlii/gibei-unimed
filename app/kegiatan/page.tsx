@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { kegiatanDivisi } from '@/data/kegiatan-data';
+import { kegiatanDivisi, type KegiatanDivisi, type Kegiatan } from '@/data/kegiatan-data';
 import PageHeader from '@/components/PageHeader';
 
 export default function KegiatanPage() {
@@ -14,7 +14,7 @@ export default function KegiatanPage() {
       />
 
       <div className="space-y-16">
-        {kegiatanDivisi.map((divisi) => (
+        {kegiatanDivisi.map((divisi: KegiatanDivisi) => (
           <motion.section 
             key={divisi.nama}
             initial={{ opacity: 0, y: 50 }}
@@ -26,11 +26,11 @@ export default function KegiatanPage() {
               Divisi {divisi.nama}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {divisi.kegiatan.map((kegiatan, index) => (
-                // Wrapper untuk perspektif 3D
-                <div key={index} className="group perspective h-72">
-                  {/* Kontainer yang akan berputar */}
-                  <div className="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500 rounded-xl shadow-lg">
+              {divisi.kegiatan.map((kegiatan: Kegiatan, index) => (
+                // SOLUSI: Menambahkan tabIndex="0" dan outline-none
+                <div key={index} className="group perspective h-72 outline-none" tabIndex={0}>
+                  {/* SOLUSI: Menambahkan group-focus untuk memicu flip saat di-tap */}
+                  <div className="relative preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 w-full h-full duration-500 rounded-xl shadow-lg">
                     {/* Sisi Depan Kartu */}
                     <div className="absolute backface-hidden w-full h-full">
                       <Image
@@ -38,6 +38,7 @@ export default function KegiatanPage() {
                         alt={kegiatan.judul}
                         width={500}
                         height={500}
+                        unoptimized={true}
                         className="w-full h-full object-cover rounded-xl"
                       />
                        <div className="absolute bottom-0 left-0 w-full p-4 bg-black/50 backdrop-blur-sm rounded-b-xl">

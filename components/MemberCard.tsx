@@ -13,46 +13,44 @@ type MemberCardProps = {
 
 export default function MemberCard({ name, position, imageUrl, socials }: MemberCardProps) {
   return (
-    <div className="group perspective w-full h-64">
-      <div className="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500 rounded-xl shadow-lg">
-        {/* Front Face */}
-        <div className="absolute backface-hidden w-full h-full">
-          <Image
-            src={imageUrl}
-            alt={`Foto ${name}`}
-            width={400}
-            height={400}
-            unoptimized={true} // Diperlukan untuk placeholder SVG
-            className="w-full h-full object-cover rounded-xl"
-          />
-          <div className="absolute bottom-0 left-0 w-full p-4 bg-black/50 backdrop-blur-sm rounded-b-xl">
-            <h3 className="text-white font-bold text-lg">{name}</h3>
-            <p className="text-[#e6d9c6] text-sm">{position}</p>
+    // SOLUSI: Menambahkan tabIndex="0" dan outline-none
+    <div className="group perspective h-80 w-full outline-none" tabIndex={0}>
+      {/* SOLUSI: Menambahkan group-focus untuk memicu flip saat di-tap */}
+      <div className="relative preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 w-full h-full duration-500">
+        {/* Sisi Depan Kartu */}
+        <div className="absolute backface-hidden w-full h-full bg-white/60 p-6 rounded-xl shadow-md text-center flex flex-col justify-center items-center">
+          <div className="relative w-32 h-32 mx-auto mb-4">
+            <Image
+              src={imageUrl}
+              alt={`Foto ${name}`}
+              fill
+              unoptimized
+              className="rounded-full object-cover shadow-md"
+            />
           </div>
+          <h3 className="text-xl font-bold text-[#1a4162]">{name}</h3>
+          <p className="text-[#333333]">{position}</p>
         </div>
-
-        {/* Back Face */}
-        <div className="absolute rotate-y-180 backface-hidden w-full h-full bg-[#1a4162] rounded-xl flex flex-col items-center justify-center p-4">
-            <h3 className="text-xl font-bold text-white">{name}</h3>
-            <p className="text-center text-[#e6d9c6] mb-4">{position}</p>
-            <div className="flex space-x-4">
-              {socials?.instagram && (
-                <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="text-[#e6d9c6] hover:text-white transition-colors">
-                  <FaInstagram size={28} />
-                </a>
-              )}
-               {socials?.linkedin && (
-                <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#e6d9c6] hover:text-white transition-colors">
-                  <FaLinkedin size={28} />
-                </a>
-              )}
-               {!socials && (
-                 <p className="text-sm text-[#e6d9c6]/70">Kontak tidak tersedia</p>
-               )}
-            </div>
+        {/* Sisi Belakang Kartu */}
+        <div className="absolute rotate-y-180 backface-hidden w-full h-full bg-[#1a4162] rounded-xl flex flex-col justify-center items-center text-center p-6">
+          <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
+          <p className="text-[#e6d9c6] mb-4">{position}</p>
+          <div className="flex space-x-4">
+            {socials?.instagram && (
+              <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="text-[#e6d9c6] hover:text-white transition-colors">
+                <FaInstagram size={28} />
+              </a>
+            )}
+            {socials?.linkedin && (
+              <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#e6d9c6] hover:text-white transition-colors">
+                <FaLinkedin size={28} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 

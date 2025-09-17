@@ -61,22 +61,25 @@ export default function HomePage() {
         <HeroCarousel />
       </section>
 
-      {/* Features Section - SOLUSI DI SINI */}
+      {/* Features Section */}
       <section>
         <h2 className="text-3xl font-bold text-center text-[#1a4162] mb-12">
           Mengapa Bergabung dengan GIBEI UNIMED?
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
+            // SOLUSI: Menambahkan tabIndex="0" agar kartu bisa di-"focus" dengan tap
             <motion.div
               key={index}
-              className="group perspective h-80"
+              className="group perspective h-80 outline-none" // outline-none untuk menghilangkan border saat focus
+              tabIndex={0} 
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500">
+              {/* SOLUSI: Menambahkan group-focus untuk memicu flip saat di-tap */}
+              <div className="relative preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 w-full h-full duration-500">
                 {/* Sisi Depan Kartu */}
                 <div className="absolute backface-hidden w-full h-full bg-[#1a4162] p-8 rounded-xl text-center shadow-lg flex flex-col justify-center">
                     <div className="flex justify-center items-center mb-4 bg-white/10 rounded-full w-20 h-20 mx-auto">
