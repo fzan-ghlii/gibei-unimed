@@ -1,103 +1,121 @@
-import Image from "next/image";
+'use client'; 
 
-export default function Home() {
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { FiTrendingUp, FiUsers, FiAward, FiInstagram } from 'react-icons/fi';
+import { FaTiktok } from 'react-icons/fa';
+import HeroCarousel from '@/components/HeroCarousel';
+
+export default function HomePage() {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const features = [
+    {
+      icon: <FiTrendingUp className="h-10 w-10 text-[#e6d9c6]" />,
+      title: 'Edukasi Pasar Modal',
+      description: 'Belajar investasi saham dan instrumen pasar modal lainnya dari dasar hingga mahir bersama para ahli.',
+    },
+    {
+      icon: <FiUsers className="h-10 w-10 text-[#e6d9c6]" />,
+      title: 'Relasi & Jaringan Luas',
+      description: 'Terhubung dengan sesama mahasiswa, akademisi, dan praktisi di industri jasa keuangan.',
+    },
+    {
+      icon: <FiAward className="h-10 w-10 text-[#e6d9c6]" />,
+      title: 'Pengalaman Profesional',
+      description: 'Asah soft skills dan hard skills melalui berbagai program kerja dan kegiatan organisasi yang nyata.',
+    },
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="space-y-24">
+      {/* Hero Section Statis */}
+      <motion.section
+        className="text-center py-10"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+      >
+        <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a4162] mb-4">
+          Gerbang Anda ke Dunia Pasar Modal
+        </h1>
+        <p className="text-lg md:text-xl text-[#333333] max-w-3xl mx-auto mb-8">
+          Galeri Investasi Bursa Efek Indonesia UNIMED adalah wadah bagi mahasiswa untuk belajar, bertumbuh, dan berinovasi di dunia investasi.
+        </p>
+        <Link 
+          href="/tentang"
+          className="bg-[#1a4162] text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-transform transform hover:scale-105 duration-300 shadow-lg"
+        >
+          Jelajahi Lebih Lanjut
+        </Link>
+      </motion.section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+      {/* Hero Carousel */}
+      <section>
+         <h2 className="text-3xl font-bold text-center text-[#1a4162] mb-12">
+          Momen Kegiatan Kami
+        </h2>
+        <HeroCarousel />
+      </section>
+
+      {/* Features Section - SOLUSI DI SINI */}
+      <section>
+        <h2 className="text-3xl font-bold text-center text-[#1a4162] mb-12">
+          Mengapa Bergabung dengan GIBEI UNIMED?
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="group perspective h-80"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <div className="relative preserve-3d group-hover:rotate-y-180 w-full h-full duration-500">
+                {/* Sisi Depan Kartu */}
+                <div className="absolute backface-hidden w-full h-full bg-[#1a4162] p-8 rounded-xl text-center shadow-lg flex flex-col justify-center">
+                    <div className="flex justify-center items-center mb-4 bg-white/10 rounded-full w-20 h-20 mx-auto">
+                        {feature.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-[#e6d9c6]">{feature.description}</p>
+                </div>
+
+                {/* Sisi Belakang Kartu */}
+                <div className="absolute rotate-y-180 backface-hidden w-full h-full bg-white rounded-xl shadow-lg flex flex-col justify-center items-center text-center p-6">
+                    <h3 className="text-2xl font-bold text-[#1a4162] mb-4">Siap Bergabung?</h3>
+                    <p className="text-[#333333] mb-6">Jadilah bagian dari kami dan mulailah perjalanan investasimu!</p>
+                    <Link href="/kontak" className="bg-[#1a4162] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-all duration-300">
+                        Hubungi Kami
+                    </Link>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      
+      {/* Social Media Call to Action */}
+      <section className="bg-white/60 p-10 rounded-xl shadow-md text-center">
+        <h2 className="text-3xl font-bold text-[#1a4162] mb-4">Tetap Terhubung Dengan Kami!</h2>
+        <p className="text-[#333333] mb-8 max-w-2xl mx-auto">
+          Ikuti akun media sosial kami untuk mendapatkan informasi terbaru seputar kegiatan, edukasi, dan pendaftaran anggota baru.
+        </p>
+        <div className="flex justify-center items-center space-x-6">
+          <a href="https://instagram.com/gibei_unimed" target="_blank" rel="noopener noreferrer" className="text-[#1a4162] hover:text-[#333333] transition-all duration-300 hover:-translate-y-1">
+            <FiInstagram size={40} />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#1a4162] hover:text-[#333333] transition-all duration-300 hover:-translate-y-1">
+            <FaTiktok size={36} />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
+
