@@ -81,7 +81,7 @@ export default function KontakPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.028781358321!2d98.70566991535497!3d3.580757751336049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131c77f7f2331%3A0x33b4901e192c73d!2sUniversitas%20Negeri%20Medan!5e0!3m2!1sen!2sid!4v1663412959891!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.913224266593!2d98.7192460747853!3d3.6073341963667818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031316e57f2416b%3A0xd703ff9a0d615325!2sFakultas%20Ekonomi%20(FE)%20-%20Unimed!5e0!3m2!1sid!2sid!4v1758170316516!5m2!1sid!2sid"
             width="100%"
             height="450"
             style={{ border: 0 }}

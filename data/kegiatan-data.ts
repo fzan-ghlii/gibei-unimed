@@ -22,29 +22,29 @@ export const kegiatanDivisi: KegiatanDivisi[] = [
   {
     nama: 'Media',
     kegiatan: [
-      { judul: 'QUIZ MASTER', imageUrl: '/images/kegiatan/Quiz+Master' },
-      { judul: 'KONTEN EDUKASI', imageUrl: '/images/kegiatan/Konten' },
+      { judul: 'STOCK MASTER QUIZ', imageUrl: '/images/kegiatan/stockmaster.jpg' },
+      { judul: 'INVESTICAST', imageUrl: '/images/kegiatan/investicast.jpg' },
     ],
   },
   {
     nama: 'Investasi',
     kegiatan: [
-      { judul: 'WISE', imageUrl: '/images/kegiatan/WISE' },
-      { judul: 'ELITE', imageUrl: '/images/kegiatan/ELITE' },
+      { judul: 'WISE', imageUrl: '/images/kegiatan/wise.jpg' },
+      { judul: 'ELITE', imageUrl: '/images/kegiatan/elite.jpg' },
     ],
   },
    {
     nama: 'Galeri',
     kegiatan: [
-      { judul: 'Piket Galeri', imageUrl: '/images/kegiatan/Piket' },
-      { judul: 'Bersih-Bersih Galeri', imageUrl: '/images/kegiatan/Bersih-Bersih' },
+      { judul: 'Piket Galeri', imageUrl: '/images/kegiatan/piket.jpg' },
+      { judul: 'Bersih-Bersih Galeri', imageUrl: '/images/kegiatan/bersihgaleri.jpg' },
     ],
   },
   {
     nama: 'HRD',
     kegiatan: [
-      { judul: 'LIKRAB X GNJ', imageUrl: '/images/kegiatan/LIKRAB' },
-      { judul: 'GITY', imageUrl: '/images/kegiatan/GITY' },
+      { judul: 'LIKRAB X GNJ', imageUrl: '/images/kegiatan/likrab.jpg' },
+      { judul: 'GITY', imageUrl: '/images/kegiatan/gity.jpg' },
     ],
   },
 ];
