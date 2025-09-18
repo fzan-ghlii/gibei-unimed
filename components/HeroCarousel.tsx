@@ -20,17 +20,17 @@ export default function HeroCarousel() {
     {
       title: 'Selamat Datang di GIBEI UNIMED',
       subtitle: 'Wadah terbaik untuk belajar, bertumbuh, dan berinovasi di dunia pasar modal.',
-      image: 'https://placehold.co/1200x600/1a4162/e6d9c6?text=Slide+1',
+      image: '/images/carousel/carousel1.jpg',
     },
     {
       title: 'Buka Wawasan Investasimu',
       subtitle: 'Ikuti berbagai program edukatif mulai dari Sekolah Pasar Modal hingga analisis saham.',
-      image: 'https://placehold.co/1200x600/333333/e6d9c6?text=Slide+2',
+      image: '/images/carousel/carousel2.jpg',
     },
     {
       title: 'Jadi Bagian dari Kami',
       subtitle: 'Pendaftaran anggota baru akan segera dibuka. Siapkan dirimu!',
-      image: 'https://placehold.co/1200x600/e6d9c6/1a4162?text=Slide+3',
+      image: '/images/carousel/carousel3.jpg',
     },
   ];
 

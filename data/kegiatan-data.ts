@@ -15,36 +15,36 @@ export const kegiatanDivisi: KegiatanDivisi[] = [
   {
     nama: 'Kegiatan',
     kegiatan: [
-      { judul: 'GIBEI CONNECT', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=GIBEI+Connect' },
-      { judul: 'INVESTASYIK', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=Investasyik' },
+      { judul: 'GIBEI CONNECT', imageUrl: '/images/kegiatan/gibeiconnect.jpg' },
+      { judul: 'INVESTASYIK', imageUrl: '/images/kegiatan/investasyik.jpg' },
     ],
   },
   {
     nama: 'Media',
     kegiatan: [
-      { judul: 'QUIZ MASTER', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=Quiz+Master' },
-      { judul: 'KONTEN EDUKASI', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=Konten' },
+      { judul: 'QUIZ MASTER', imageUrl: '/images/kegiatan/Quiz+Master' },
+      { judul: 'KONTEN EDUKASI', imageUrl: '/images/kegiatan/Konten' },
     ],
   },
   {
     nama: 'Investasi',
     kegiatan: [
-      { judul: 'WISE', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=WISE' },
-      { judul: 'ELITE', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=ELITE' },
+      { judul: 'WISE', imageUrl: '/images/kegiatan/WISE' },
+      { judul: 'ELITE', imageUrl: '/images/kegiatan/ELITE' },
     ],
   },
    {
     nama: 'Galeri',
     kegiatan: [
-      { judul: 'Piket Galeri', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=Piket' },
-      { judul: 'Bersih-Bersih Galeri', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=Bersih-Bersih' },
+      { judul: 'Piket Galeri', imageUrl: '/images/kegiatan/Piket' },
+      { judul: 'Bersih-Bersih Galeri', imageUrl: '/images/kegiatan/Bersih-Bersih' },
     ],
   },
   {
     nama: 'HRD',
     kegiatan: [
-      { judul: 'LIKRAB X GNJ', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=LIKRAB' },
-      { judul: 'GITY', imageUrl: 'https://placehold.co/500x500/1a4162/e6d9c6?text=GITY' },
+      { judul: 'LIKRAB X GNJ', imageUrl: '/images/kegiatan/LIKRAB' },
+      { judul: 'GITY', imageUrl: '/images/kegiatan/GITY' },
     ],
   },
 ];
