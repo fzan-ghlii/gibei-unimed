@@ -1,4 +1,3 @@
-// app/prestasi/page.tsx
 'use client';
 import PageHeader from '@/components/PageHeader';
 import { achievements } from '@/data/prestasi-data';
@@ -71,3 +70,4 @@ export default function PrestasiPage() {
     </div>
   );
 }
+

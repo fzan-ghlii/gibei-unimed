@@ -41,9 +41,9 @@ type Division = {
 
 // Data Pembina
 export const pembina = {
-  name: 'Nama Pembina',
+  name: 'Dita Eka Pertiwi Sirait, S.E., M.Si.',
   position: 'Pembina GIBEI UNIMED',
-  imageUrl: '/images/pengurus/Pembina',
+  imageUrl: '/images/pengurus/bu-dita.jpg',
 };
 
 // Data Presidium
@@ -62,11 +62,11 @@ export const divisions: Division[] = [
     ketua: { name: 'Artika Wulandari', position: 'Ketua Divisi', imageUrl: '/images/pengurus/artika.jpg' },
     wakil: { name: 'Vailimlim Simamora', position: 'Wakil Ketua Divisi', imageUrl: '/images/pengurus/vai.jpg' },
     anggota: [
-      { name: 'Sutria Evi Fania', position: 'Anggota Divisi', imageUrl: '/images/pengurus/Sutria' },
+      { name: 'Sutria Evi Fania', position: 'Anggota Divisi', imageUrl: '/images/pengurus/sutria.jpg' },
       { name: 'Saniah Lidiya Hawani', position: 'Anggota Divisi', imageUrl: '/images/pengurus/saniah.jpg' },
       { name: 'Ruwina Rahmanda', position: 'Anggota Divisi', imageUrl: '/images/pengurus/ruwina.jpg' },
       { name: 'Muhammad Ariel', position: 'Anggota Divisi', imageUrl: '/images/pengurus/aril.jpg' },
-      { name: 'Peter Nov Barus', position: 'Anggota Divisi', imageUrl: '/images/pengurus/Peter' },
+      { name: 'Peter Nov Barus', position: 'Anggota Divisi', imageUrl: '/images/pengurus/peter.jpg' },
     ],
   },
   {
@@ -80,7 +80,7 @@ export const divisions: Division[] = [
         { name: 'Mismauli Nainggolan', position: 'Anggota Divisi', imageUrl: '/images/pengurus/misma.jpg' },
         { name: 'Annisa Handayani', position: 'Anggota Divisi', imageUrl: '/images/pengurus/annisa.jpg' },
         { name: 'Ribka Intan Sitorus', position: 'Anggota Divisi', imageUrl: '/images/pengurus/ribka.jpg' },
-        { name: 'Mhd. Rheza', position: 'Anggota Divisi', imageUrl: '/images/pengurus/Rheza' },
+        { name: 'Mhd. Rheza', position: 'Anggota Divisi', imageUrl: '/images/pengurus/reza.jpg' },
     ],
   },
   {
@@ -110,12 +110,12 @@ export const divisions: Division[] = [
   {
     name: 'Divisi HRD',
     description: 'Bertanggung jawab atas hubungan personal antar divisi, anggota KSPM, dan presidium, menjaga keharmonisan internal organisasi.',
-    ketua: { name: 'Andini Aulia', position: 'Ketua Divisi', imageUrl: '/images/pengurus/Andini' },
+    ketua: { name: 'Andini Aulia', position: 'Ketua Divisi', imageUrl: '/images/pengurus/andini.jpg' },
     wakil: { name: 'Fikri Alfahmi Siregar', position: 'Wakil Ketua Divisi', imageUrl: '/images/pengurus/fikri.jpg' },
     anggota: [
       { name: 'Devina Wiyani', position: 'Anggota Divisi', imageUrl: '/images/pengurus/devina.jpg' },
       { name: 'M. Irfandi Syahputra', position: 'Anggota Divisi', imageUrl: '/images/pengurus/irfan.jpg' },
-      { name: 'Cecilia BR Lumban Gaol', position: 'Anggota Divisi', imageUrl: '/images/pengurus/Cecilia' },
+      { name: 'Cecilia BR Lumban Gaol', position: 'Anggota Divisi', imageUrl: '/images/pengurus/cecilia.jpg' },
       { name: 'Vennia Marsellia Purba', position: 'Anggota Divisi', imageUrl: '/images/pengurus/venia.jpg' },
     ],
   },
